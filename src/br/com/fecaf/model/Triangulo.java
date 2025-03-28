@@ -1,76 +1,80 @@
 package br.com.fecaf.model;
-
 import java.util.Scanner;
 
 public class Triangulo {
 
-    public double base, lado2, lado3, area, perimetro, altura;
+    public double base, altura, lado2, lado3, area, perimetro, coposto,cadjacente,soma, total, hipotenusa;
 
     Scanner scanner = new Scanner(System.in);
 
-    public boolean cadastrarTriangulo() {
-        System.out.println("/************************/");
-        System.out.println("/*   Cadastro Triângulo */");
-        System.out.println("/************************/");
-        System.out.print("/* Informe o Base:     */");
+    public boolean cadastrarTriangulo () {
+        System.out.println("/*************************/");
+        System.out.println("/* Cadastrando Triângulo */");
+        System.out.println("/*************************/");
+        System.out.println("/* Informe a base: */");
         base = scanner.nextDouble();
-        System.out.print("/* Informe o lado 2:     */");
+        System.out.println("/* Informe o lado 2: */");
         lado2 = scanner.nextDouble();
-        System.out.print("/* Informe o lado 3:   */");
+        System.out.println("/* Informe o lado 3: */");
         lado3 = scanner.nextDouble();
-        System.out.print("Informe a Altura: ");
+        System.out.println("/* Informe a altura: */");
         altura = scanner.nextDouble();
-        System.out.println("/* Triângulo Cadastrado com Sucesso !");
-        System.out.println("/***********************************/");
+        System.out.println("/*************************/");
 
         return true;
     }
 
     public void calcularArea () {
-        System.out.println("/*********************************/");
-        System.out.println("/*        Calculando Area        */");
-        System.out.println("/*********************************/");
+        System.out.println("/*************************/");
+        System.out.println("/* Calculando Area */");
+        System.out.println("/*************************/");
 
-        area = (base * altura) / 2 ;
-        System.out.println("A área é: " + area);
-        System.out.println("/*********************************/");
+        area = (base * altura)/2;
+        System.out.println("Área é igual: " + area);
+        System.out.println("/*************************/");
     }
 
     public void calcularPerimetro () {
-        System.out.println("/*********************************/");
-        System.out.println("/*      Calculando Perimetro     */");
-        System.out.println("/*********************************/");
+        System.out.println("/*************************/");
+        System.out.println("/* Calculando Perímetro */");
+        System.out.println("/*************************/");
 
         perimetro = base + lado2 + lado3;
-        System.out.println("O perimetro é: " + perimetro);
-        System.out.println("/*********************************/");
+        System.out.println("Perímetro é igual: " + perimetro);
+        System.out.println("/*************************/");
     }
 
-    // Isosceles / Escaleno / Equilatero
+    /** Definir tipo de triângulo*/
+    /** Equilatero - Escaleno - Isósceles*/
+
     public void definirTipo () {
-        System.out.println("/*********************************/");
-        System.out.println("/*        Definindo Tipo         */");
-        System.out.println("/*********************************/");
+        System.out.println("/*************************/");
+        System.out.println("/* Definindo Tipo Triângulo */");
+        System.out.println("/*************************/");
 
         if (base == lado2 && base == lado3) {
-
-            System.out.println("Este Triângulo é Equilátero ...");
-
+            System.out.println("Esse triângulo é Equilatero...");
         } else if (base != lado2 && base != lado3 && lado2 != lado3) {
-
-            System.out.println("Este Triângulo é Escaleno ...");
-
+            System.out.println("Esse triâgulo é um Escaleno...");
         } else {
-            System.out.println("Este Triângulo é Isosceles ...");
+            System.out.println("Esse triâgulo é um Isósceles");
         }
-        System.out.println("/***************************************/");
-
     }
 
+    public void detectarTriangulo (){
 
+        System.out.println("/*************************/");
+        System.out.println("/* Detectando o tipo de triângulo...*/");
+        System.out.println("/*************************/");
+        System.out.print("Informe o valor do cateto oposto: ");
+        lado2 = scanner.nextDouble();
+        System.out.println("Informe o valor do cateto adjacente: ");
+        lado3 = scanner.nextDouble();
 
-
-
-
+        //Calculando os catetos:
+        coposto = lado2 * lado2;
+        cadjacente = lado3 * lado3;
+        soma = coposto + cadjacente;
+    }
 
 }
