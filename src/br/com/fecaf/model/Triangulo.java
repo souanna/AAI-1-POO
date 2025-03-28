@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Triangulo {
 
-    public double base, altura, lado2, lado3, area, perimetro, coposto,cadjacente,soma, total, hipotenusa;
+    public double base, altura, lado2, lado3, area, perimetro, coposto,cadjacente,soma, hipotenusa;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -75,6 +75,17 @@ public class Triangulo {
         coposto = lado2 * lado2;
         cadjacente = lado3 * lado3;
         soma = coposto + cadjacente;
-    }
 
+        //Calculando a hipotenusa:
+        hipotenusa = Math.sqrt(soma);
+        System.out.println("O valor da hipotenusa é: " + hipotenusa);
+
+        // Verificando se é um triângulo retângulo:
+        if (Math.abs(coposto + cadjacente - soma) < 0.0001) {
+                System.out.println("É um triângulo retângulo.");
+            } else {
+                System.out.println("Não é um triângulo retângulo.");
+            }
+
+    }
 }
