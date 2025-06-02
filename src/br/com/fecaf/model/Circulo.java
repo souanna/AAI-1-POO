@@ -44,15 +44,4 @@ public class Circulo {
 
         perimetro = 2 * Math.PI * raio;
     }
-
-
-
-
-
-
-
-
-
-
-
 }
